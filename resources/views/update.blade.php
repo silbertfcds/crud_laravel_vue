@@ -1,4 +1,4 @@
-<div class="modal fade" id="create">
+<div class="modal fade" id="update">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -7,11 +7,11 @@
 				</button>
 				<h4>Nova tarefa</h4>
 			</div>
-			<form method="post" v-on:submit.prevent="adicionarTask">
+			<form method="post" v-on:submit.prevent="atualizarTask()">
 				<div class="modal-body">
 				
 					<label for="inputTarefa" class="col-form-label">Tarefa</label>
-					<input type="text" class="form-control" id="inputTarefa" placeholder="Tarefa" v-model="task.keep">
+					<input type="text" class="form-control" id="inputTarefa" placeholder="Tarefa" v-model="taskEdit.keep">
 
 						<!-- <div class="form-group col-md-6">
 							<label for="inputPassword4" class="col-form-label">Número</label>

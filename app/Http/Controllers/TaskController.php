@@ -37,23 +37,18 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        /*$this->validade($request, [
-            'nome' => 'required',
-            'numero' => 'required',
-            'descricao' => 'required'
-        ]);
+       /* $this->validade($request, [
+            'keep' => 'required'
+        ]);*/
 
-        $produto = Produto::create([
-            'nome' => $request->input('nome'),
-            'numero' => $request->input('numero'),
-            'descricao' => $request->input('descricao')
-
+        $task = Task::create([
+            'keep' => $request->input('keep')
         ]);
 
         return response()->json([
-            'message' => 'produto cadastrado com sucesso',
-            'produto' => $produto
-        ]);*/
+            'message' => 'task cadastrado com sucesso',
+            'task' => $task
+        ]);
     }
 
     /**
@@ -78,15 +73,16 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-         /* $this->validate($request, [
+        /* $this->validate($request, [
             'nome' => 'required',
             'numero' => 'required'
-        ]);
-        $produto = Produto::find($id);
-        $produto->update($request->all());
+        ]);*/
+        
+        $task = Task::find($id);
+        $task->update($request->all());
         return response()->json([
             'message' => 'produto updated successfully'
-        ]);*/
+        ]);
     }
 
     /**
