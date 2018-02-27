@@ -33,6 +33,7 @@
 				</tr>
 			</tbody>
 		</table>
+		<div>@{{ url }}</div>
 		@include('create')
 		@include('update')
 	</div>

@@ -15,5 +15,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/pegarUrl', 'TaskController@pegarUrl');
+
 Route::resource('tasks', 'TaskController', ['except' => 'show']);
 

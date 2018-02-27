@@ -51,6 +51,12 @@ class TaskController extends Controller
         ]);
     }
 
+    public function pegarUrl(){
+        $url = file_get_contents('http://esaj.tjrn.jus.br/cjosg/index.jsp?tpClasse=J&deEmenta=roubo&clDocumento=&nuProcesso=&deClasse=&cdClasse=&deOrgaoJulgador=&cdOrgaoJulgador=&nmRelator=&cdRelator=&dtInicio=&dtTermino=&cdOrigemDoc=0&Submit=Pesquisar&Origem=1&rbCriterioEmenta=TODAS&rbCriterioBuscaLivre=TODAS');
+        /*preg_match_all( '/<td class="textopreto">([^<]++)/', $url, $conteudo);*/
+       
+        return $url;
+    }
     /**
      * Show the form for editing the specified resource.
      *

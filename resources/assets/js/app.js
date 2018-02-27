@@ -6,6 +6,7 @@ new Vue({
 	},
 	data: {
 		keeps: [],
+		url: "",
 		errors: [],
 		editForm: "",
 
@@ -27,11 +28,22 @@ new Vue({
   				this.keeps = response.data;
   				console.log('array: ',this.keeps);
   			});
-
+			this.getUrl();
 			/*axios.get(urlKeeps).then(response => {
 				this.keeps = response.data
 			});*/
 		},
+
+		getUrl: function(){
+			console.log('entrou url');
+			var urlKeeps = '/pegarUrl';
+
+			this.$http.get(urlKeeps).then((response)=>{
+  				this.url = response.data;
+  				console.log('url: ',this.url);
+  			});
+		},
+
 		deleteTask: function(keep) {
 			var url = 'tasks/' + keep.id;
 			axios.delete(url).then(response => { 
