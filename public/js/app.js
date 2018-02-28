@@ -24795,7 +24795,7 @@ new Vue({
 
 		getAbrirJanelaSaj(){
 			console.log('entrou janela');
-			window.open("http://www.google.com/", "minhaJanela", "height=200,width=200");
+			window.open("http://esaj.tjrn.jus.br/cjosg/index.jsp?tpClasse=J&deEmenta=roubo&clDocumento=&nuProcesso=&deClasse=&cdClasse=&deOrgaoJulgador=&cdOrgaoJulgador=&nmRelator=&cdRelator=&dtInicio=&dtTermino=&cdOrigemDoc=0&Submit=Pesquisar&Origem=1&rbCriterioEmenta=TODAS&rbCriterioBuscaLivre=TODAS", "minhaJanela", "height=200,width=200");
 		},
 
 		getUrl: function(){
