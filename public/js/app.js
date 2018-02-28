@@ -24787,9 +24787,15 @@ new Vue({
   				console.log('array: ',this.keeps);
   			});
 			this.getUrl();
+			this.getAbrirJanelaSaj();
 			/*axios.get(urlKeeps).then(response => {
 				this.keeps = response.data
 			});*/
+		},
+
+		getAbrirJanelaSaj(){
+			console.log('entrou janela');
+			window.open("http://www.google.com/", "minhaJanela", "height=200,width=200");
 		},
 
 		getUrl: function(){

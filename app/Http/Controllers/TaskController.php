@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+use Path\To\DOMDocument;
 
 class TaskController extends Controller
 {
@@ -52,10 +53,27 @@ class TaskController extends Controller
     }
 
     public function pegarUrl(){
+        
         $url = file_get_contents('http://esaj.tjrn.jus.br/cjosg/index.jsp?tpClasse=J&deEmenta=roubo&clDocumento=&nuProcesso=&deClasse=&cdClasse=&deOrgaoJulgador=&cdOrgaoJulgador=&nmRelator=&cdRelator=&dtInicio=&dtTermino=&cdOrigemDoc=0&Submit=Pesquisar&Origem=1&rbCriterioEmenta=TODAS&rbCriterioBuscaLivre=TODAS');
-        /*preg_match_all( '/<td class="textopreto">([^<]++)/', $url, $conteudo);*/
+       /* preg_match_all( '/<td class="textopreto">([^<]++)/', $url, $conteudo);
+        $exibir = $conteudo[0][0];*/
+        //retira todas as tags html do texto
+        /*$texto = strip_tags($url);*/
+
+        //retira uma tag especifica do texto
+        /*$str = preg_replace('@<table[^>]*?>.*?</table\s*>@si', '', $url);*/
        
-        return $url;
+        $dom = new \DOMDocument;
+
+        $dom->loadHTML("<html><body>Test<br></body></html>");
+
+        $tables = $dom->getElementsByTagName('body');
+
+        foreach ($tables as $table) {
+            echo $table->nodeValue, PHP_EOL;
+        }
+        
+        
     }
     /**
      * Show the form for editing the specified resource.
